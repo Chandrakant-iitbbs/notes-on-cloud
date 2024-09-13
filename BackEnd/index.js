@@ -11,6 +11,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth",require("./routes/auth"));
+app.use("/api/notes",require("./routes/notes"));
 
 app.listen(port, () => {
   console.log(`NoteOnCloud backend listening on port ${port}`);
