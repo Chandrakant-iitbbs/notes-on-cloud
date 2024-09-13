@@ -27,7 +27,7 @@ router.post("/createuser", async (req, res) => {
     // generating token 
     const auto_token = jwt.sign(data, JWT_secret);
     success = true;
-    res.status(200).json({ success, auto_token });
+    res.status(201).json({ success, auto_token });
   }
   catch (error) {
     console.log(error.message);
