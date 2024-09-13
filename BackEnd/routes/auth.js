@@ -72,9 +72,11 @@ router.post("/login", async (req, res) => {
 // fetchuser is a middleware that verified the token and get the user's id from token
 router.get("/getUserData", fetchUser, async (req, res) => {
   try {
+    success = false;
     const userid = req.user.id;
     const user = await User.findById(userid).select("-password");
-    res.status(200).send(user);
+    success = true;
+    res.status(200).json({ success, user });
   }
   catch (error) {
     console.log(error.message);
