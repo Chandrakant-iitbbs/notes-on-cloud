@@ -51,6 +51,16 @@ const Navbar = () => {
                 About
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${
+                  location.pathname === "/about" ? "active" : ""
+                }`}
+                to="/notes"
+              >
+                Your Notes
+              </Link>
+            </li>
           </ul>
           {localStorage.getItem("token") ? (
             <button

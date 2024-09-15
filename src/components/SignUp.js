@@ -42,7 +42,7 @@ const SignUp = () => {
             // save the token in local storage
             localStorage.setItem("token", json.auto_token);
             swal({ icon: "success", title: "Account Created Successfully" });
-            navigate("/");  // redirect to home page
+            navigate("/notes");  // redirect to notes page
         }
         else {
             swal({ icon: "error", title: json.error ? json.error : json });

@@ -31,6 +31,9 @@ const NoteState = (props) => {
 
   // Add a note
   const addNote = async (title, description, tag) => {
+    if (tag === "") {
+      tag = "General";      
+    }
     const url = `${host}/api/notes/addNote`;
     const response = await fetch(url, {
       method: "POST",
